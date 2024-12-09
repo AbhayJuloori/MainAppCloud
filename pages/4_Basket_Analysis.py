@@ -37,5 +37,7 @@ else:
     st.title("Frequent Itemsets from Apriori")
     if not frequent_itemsets.empty:
         st.dataframe(frequent_itemsets)
+        st.title("RandomForest Regressor")
+        st.write(f"Mean Absolute Error (MAE): {mae}")
     else:
         st.warning("No frequent itemsets found. Try adjusting the `min_support` parameter.")
