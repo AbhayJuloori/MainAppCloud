@@ -33,3 +33,9 @@ if not rules.empty:
     st.dataframe(filtered_rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
 else:
     st.write("No association rules generated with the current thresholds.")
+    frequent_itemsets['itemsets'] = frequent_itemsets['itemsets'].apply(lambda x: ', '.join(map(str, x)))
+    st.title("Frequent Itemsets from Apriori")
+    if not frequent_itemsets.empty:
+        st.dataframe(frequent_itemsets)
+    else:
+        st.warning("No frequent itemsets found. Try adjusting the `min_support` parameter.")
