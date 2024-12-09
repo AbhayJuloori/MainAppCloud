@@ -32,7 +32,7 @@ if not rules.empty:
     st.subheader("Filtered Association Rules")
     st.dataframe(filtered_rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
 else:
-    st.write("No association rules generated with the current thresholds.")
+    #st.write("No association rules generated with the current thresholds.")
     frequent_itemsets['itemsets'] = frequent_itemsets['itemsets'].apply(lambda x: ', '.join(map(str, x)))
     st.title("Frequent Itemsets from Apriori")
     if not frequent_itemsets.empty:
